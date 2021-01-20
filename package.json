@@ -1,0 +1,21 @@
+{
+    "name": "coolinary_website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "cd client && npm install && npm run build",
+        "eslint": "cd client && npm run eslint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Andrey-Matanov/cooking_site.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Andrey-Matanov/cooking_site/issues"
+    },
+    "homepage": "https://github.com/Andrey-Matanov/cooking_site#readme"
+}
