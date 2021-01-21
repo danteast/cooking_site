@@ -1,17 +1,8 @@
 import { combineReducers } from 'redux';
-import { INCREASE_NUMBER } from '../actions/numberActions';
-
-const numberReducer = (number = 0, action) => {
-    switch (action.type) {
-        case INCREASE_NUMBER: {
-            return number + 1;
-        }
-        default: {
-            return number;
-        }
-    }
-};
+import { recipesListReducer } from './recipesListReducer';
+import { usersReducer } from './usersReducer';
 
 export default combineReducers({
-    number: numberReducer,
+    recipes: recipesListReducer,
+    users: usersReducer,
 });

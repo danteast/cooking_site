@@ -1,12 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { menu, selected_link } from './Menu.module.css';
 
 const Menu = () => {
     return (
-        <div>
-            <Link to='/'>Главная</Link>
-            <Link to='/recipes'>Рецепты</Link>
-            <Link to='/recipe'>Рецепт</Link>
+        <div className={menu}>
+            <NavLink exact to='/' activeClassName={selected_link}>
+                Главная
+            </NavLink>
+            <NavLink to='/recipes' activeClassName={selected_link}>
+                Рецепты
+            </NavLink>
+            <NavLink to='/users' activeClassName={selected_link}>
+                Пользователи
+            </NavLink>
+            <NavLink to='/profile' activeClassName={selected_link}>
+                Профиль
+            </NavLink>
         </div>
     );
 };
