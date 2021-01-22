@@ -1,0 +1,82 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+    background-color: rgb(230, 230, 230);
+}
+
+input,
+textarea,
+select,
+button {
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Стили, применяемые к #root и main прижимают footer к низу страницы */
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.wrapper a {
+    text-decoration: none;
+    color: black;
+}
+
+.recipe-item {
+    border: 1px solid #999;
+    margin: 10px;
+    padding: 10px;
+    background-color: #cccccc;
+}
+
+.recipe-item h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.recipe-item h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.recipe-item-info-block {
+    display: flex;
+}
+
+.recipe-item-info-block-inner {
+    padding: 10px;
+}
+
+.author-link {
+    text-decoration: underline;
+}
