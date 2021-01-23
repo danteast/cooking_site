@@ -5,16 +5,31 @@ const usersList = [
         id: 1,
         name: 'Admin',
         recipesIds: [],
+        authorRating: 0,
     },
     {
         id: 2,
         name: 'Елена',
         recipesIds: ['1'],
+        authorRating: 16,
     },
     {
         id: 3,
         name: 'Fjodor',
         recipesIds: ['2'],
+        authorRating: 9,
+    },
+    {
+        id: 4,
+        name: 'Александр',
+        recipesIds: [],
+        authorRating: 0,
+    },
+    {
+        id: 5,
+        name: 'Роберт',
+        recipesIds: [],
+        authorRating: 0,
     },
 ];
 

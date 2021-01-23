@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RecipeItem = (props) => {
-    let { name, author, time, difficulty, description, image } = props;
+    let { name, author, time, difficulty, rating, description, image } = props;
 
     let formatTime = (sourceTime) => {
         let retVal;
@@ -29,6 +29,9 @@ const RecipeItem = (props) => {
                     </div>
                     <div className='recipe-difficuilty'>
                         <p>Сложность: {difficulty}/10</p>
+                    </div>
+                    <div className='recipe-rating'>
+                        <p>Рейтинг: {rating}</p>
                     </div>
                     <p className='recipe-item-text'>{description}</p>
                 </div>
