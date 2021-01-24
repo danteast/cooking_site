@@ -7,7 +7,7 @@ const Authors = ({ users }) => {
             <h1>Рейтинг авторов</h1>
             <div className='users'>
                 {users.map((user, i) => (
-                    <div>
+                    <div key={i}>
                         <p>
                             {i + 1}: {user.name}. Рейтинг: {user.authorRating}
                         </p>

@@ -41,6 +41,24 @@ const Menu = () => {
                     <Heading>Профиль</Heading>
                 </LinkDiv>
             </NavLink>
+            <NavLink exact to='/AllArticles' activeClassName={selected_link}>
+                <LinkDiv>
+                    <HomeIcon color='primary' />
+                    <Heading>Все статьи</Heading>
+                </LinkDiv>
+            </NavLink>
+            <NavLink exact to='/welcomePage' activeClassName={selected_link}>
+                <LinkDiv>
+                    <HomeIcon color='primary' />
+                    <Heading>Страница регистрации</Heading>
+                </LinkDiv>
+            </NavLink>
+            <NavLink exact to='/login' activeClassName={selected_link}>
+                <LinkDiv>
+                    <HomeIcon color='primary' />
+                    <Heading>Логин</Heading>
+                </LinkDiv>
+            </NavLink>
         </div>
     );
 };

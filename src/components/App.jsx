@@ -3,12 +3,13 @@ import RootRouter from '../pages/RootRouter';
 import Footer from './Footer';
 import Header from './Header';
 
+
 const App = () => {
     return (
         <>
+            <Header />
             <main>
                 <div className='wrapper'>
-                    <Header />
                     <RootRouter />
                 </div>
             </main>

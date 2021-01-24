@@ -59,6 +59,8 @@ export const recipesListReducer = (recipes = recipesList, action) => {
                     ...action.payload,
                     author: 'Admin',
                     image: 'https://via.placeholder.com/150/aba',
+                    rating: 0,
+                    commentaries: [],
                 },
             ];
         }
