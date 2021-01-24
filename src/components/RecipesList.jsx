@@ -16,6 +16,7 @@ const RecipesList = (props) => {
                                 author={item.author}
                                 time={item.time}
                                 difficulty={item.difficulty}
+                                rating={item.rating}
                                 description={item.description}
                                 image={item.image}
                             />
