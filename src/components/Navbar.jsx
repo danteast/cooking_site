@@ -34,7 +34,6 @@ export default function Navbar() {
                         Coolинари
                     </Typography>
                     <Menu />
-                    <Button color="inherit">Login</Button>
                 </Toolbar>
                 </div>
             </AppBar>
