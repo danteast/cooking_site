@@ -9,6 +9,7 @@ import Authors from './Authors';
 import Login from './Login';
 import AllArticles from './AllArticles';
 import WelcomePage from './WelcomePage';
+import NewArticle from './NewArticle.jsx'
 
 
 const RootRouter = () => {
@@ -22,6 +23,7 @@ const RootRouter = () => {
                 <Route path='/profile' render={() => <Profile />} />
                 <Route path='/login' render={() => <Login />} />
                 <Route path='/AllArticles' render={() => <AllArticles />} />
+                <Route path='/newArticle' render={() => <NewArticle />} />
                 <Route path='/welcomePage' render={() => <WelcomePage />} />
                 <Route render={() => <Error404 />} />
             </Switch>
