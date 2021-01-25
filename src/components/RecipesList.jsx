@@ -1,17 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import RecipeItem from '../components/RecipeItem.jsx';
+import { recipies_list_wrapper,
+     recipe_item,
+     button_container,
+     scrolling } from './RecipesList.module.css';
+import { Button } from '@material-ui/core'
 
 const RecipesList = (props) => {
-    let { recipesList } = props;
+    let { recipesList, loadRecipes } = props;
+
+    let loadRecipesInner = (count) => {
+        loadRecipes(3);
+    }
 
     let renderRecipesList = () => {
         if (typeof recipesList !== 'undefined') {
             if (recipesList.length !== 0) {
                 return recipesList.map((item) => {
                     return (
-                        <Link key={item.id} to={`/recipes/${item.id}`}>
+                        <div className={recipe_item} key={item.id}>
                             <RecipeItem
+                                id={item.id}
                                 name={item.name}
                                 author={item.author}
                                 time={item.time}
@@ -20,7 +29,7 @@ const RecipesList = (props) => {
                                 description={item.description}
                                 image={item.image}
                             />
-                        </Link>
+                        </div>
                     );
                 });
             }
@@ -29,7 +38,16 @@ const RecipesList = (props) => {
         }
     };
 
-    return <div className='recipies-list-container'>{renderRecipesList()}</div>;
+    return <div className={recipies_list_wrapper}>
+                <div className={scrolling}>
+                    {renderRecipesList()}
+                    <div className={button_container}>
+                        <Button color='primary' variant='contained' onClick={() => {loadRecipesInner(3)}}>
+                            Больше рецептов!
+                        </Button>
+                    </div>
+                </div>
+        </div>;
 };
 
 export default RecipesList;
