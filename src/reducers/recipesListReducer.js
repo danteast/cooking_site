@@ -1,3 +1,4 @@
+import produce from 'immer';
 import {
     ADD_COMMENTARY,
     ADD_RECIPE,
@@ -84,41 +85,29 @@ const recipesList = [
 export const recipesListReducer = (recipes = recipesList, action) => {
     switch (action.type) {
         case ADD_RECIPE: {
-            return [
-                ...recipes,
-                {
+            return produce(recipes, (newRecipes) => {
+                newRecipes.push({
                     id: '' + (recipes.length + 1),
                     ...action.payload,
                     author: 'Admin',
                     image: 'https://via.placeholder.com/150/aba',
                     rating: 0,
                     commentaries: [],
-                },
-            ];
+                });
+            });
         }
         case ADD_COMMENTARY: {
-            // const recipe = recipes.find(
-            //     (recipe) => recipe.id === action.payload.recipeId
-            // );
-            // const recipe = {
-            //     ...recipes.find(
-            //         (recipe) => recipe.id === action.payload.recipeId
-            //     ),
-            // };
-            // recipe.commentaries.push({
-            //     id: 5,
-            //     authorId: 1,
-            //     text: action.payload.text,
-            // });
+            const { recipeId, text } = action.payload;
 
-            return recipes;
-
-            // return [
-            //     ...recipes.filter(
-            //         (recipe) => recipe.id !== action.payload.recipeId
-            //     ),
-            //     recipe,
-            // ];
+            return produce(recipes, (newRecipes) => {
+                newRecipes
+                    .find((recipe) => recipe.id === recipeId)
+                    .commentaries.push({
+                        id: 5,
+                        authorId: 1,
+                        text,
+                    });
+            });
         }
         case RENDER_RECIPES: {
             //Заглушка - данные будут с сервера, условия не будет
