@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import AddCommentaryForm from '../components/Forms/AddCommentaryForm';
 
-const Recipe = ({ recipes, users }) => {
-    console.log('recipes: ', recipes);
-    const { id } = useParams();
+const Recipe = ({ recipeId, recipe, users }) => {
     const {
         name,
         author,
@@ -14,7 +13,7 @@ const Recipe = ({ recipes, users }) => {
         time,
         rating,
         commentaries,
-    } = recipes.find((recipe) => recipe.id === id);
+    } = recipe;
 
     return (
         <>
@@ -60,12 +59,14 @@ const Recipe = ({ recipes, users }) => {
                     </div>
                 ))}
             </div>
+            <AddCommentaryForm recipeId={recipeId} />
         </>
     );
 };
 
-const mapStateToProps = (state) => ({
-    recipes: state.recipes,
+const mapStateToProps = (state, ownProps) => ({
+    recipeId: ownProps.id,
+    recipe: state.recipes.find((recipe) => recipe.id === ownProps.id),
     users: state.users,
 });
 

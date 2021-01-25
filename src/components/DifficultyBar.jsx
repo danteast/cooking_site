@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { difficulty_container, difficulty_element, difficulty_element_inactive } from './DifficultyBar.module.css'
+import {
+    difficulty_container,
+    difficulty_element,
+    difficulty_element_inactive,
+} from './DifficultyBar.module.css';
 
 const DifficuiltyBar = (props) => {
-
     let { diff } = props;
 
     let setDifficuiltyColor = (difficulty) => {
-
         switch (difficulty) {
             case 1: {
                 return '#5aad53';
@@ -40,29 +42,33 @@ const DifficuiltyBar = (props) => {
                 return '#f39451';
             }
             default: {
-                return '#000'
+                return '#000';
             }
         }
-    }
+    };
 
     let renderScale = (difficulty) => {
         let renderArray = [];
         for (let i = 1; i <= difficulty; i++) {
-            renderArray = [...renderArray,
-                <div className={difficulty_element} style={ {backgroundColor: setDifficuiltyColor(difficulty)} }></div>
-            ]
+            renderArray = [
+                ...renderArray,
+                <div
+                    key={i}
+                    className={difficulty_element}
+                    style={{ backgroundColor: setDifficuiltyColor(difficulty) }}
+                ></div>,
+            ];
         }
         for (let i = difficulty + 1; i <= 10; i++) {
-            renderArray = [...renderArray,
-                <div className={difficulty_element_inactive}></div>
-            ]
+            renderArray = [
+                ...renderArray,
+                <div key={i} className={difficulty_element_inactive}></div>,
+            ];
         }
         return renderArray;
-    }
+    };
 
-    return <div className={difficulty_container}>
-            {renderScale(diff)}
-        </div>;
+    return <div className={difficulty_container}>{renderScale(diff)}</div>;
 };
 
 export default DifficuiltyBar;

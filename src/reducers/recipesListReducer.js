@@ -1,4 +1,8 @@
-import { ADD_RECIPE, RENDER_RECIPES } from '../actions/recipesListActions';
+import {
+    ADD_COMMENTARY,
+    ADD_RECIPE,
+    RENDER_RECIPES,
+} from '../actions/recipesListActions';
 
 const recipesList = [
     {
@@ -92,80 +96,106 @@ export const recipesListReducer = (recipes = recipesList, action) => {
                 },
             ];
         }
+        case ADD_COMMENTARY: {
+            // const recipe = recipes.find(
+            //     (recipe) => recipe.id === action.payload.recipeId
+            // );
+            // const recipe = {
+            //     ...recipes.find(
+            //         (recipe) => recipe.id === action.payload.recipeId
+            //     ),
+            // };
+            // recipe.commentaries.push({
+            //     id: 5,
+            //     authorId: 1,
+            //     text: action.payload.text,
+            // });
+
+            return recipes;
+
+            // return [
+            //     ...recipes.filter(
+            //         (recipe) => recipe.id !== action.payload.recipeId
+            //     ),
+            //     recipe,
+            // ];
+        }
         case RENDER_RECIPES: {
             //Заглушка - данные будут с сервера, условия не будет
-            let tempAddedRecipes= [];
+            let tempAddedRecipes = [];
             switch (recipes[recipes.length - 1].id) {
                 case '3': {
-                    tempAddedRecipes = [{
-                        id: '4',
-                        name: 'Фрикасе',
-                        author: 'Елена',
-                        time: 30,
-                        difficulty: 4,
-                        description:
-                            'Вкусный сливочный соус с кусочками куриного филе. Ещё один рецепт, в котором куриное филе выступает в выигрышном варианте. Благодаря сливочному соусу, куриное филе получается очень нежным и ...',
-                        image: 'https://via.placeholder.com/150/abd',
-                        rating: 6,
-                        commentaries: [
-                            {
-                                id: 8,
-                                authorId: 4,
-                                text: 'Мне не понравился рецепт',
-                            },
-                            {
-                                id: 8,
-                                authorId: 4,
-                                text: 'Мне не понравился рецепт',
-                            },
-                        ],
-                    },
-                    {
-                        id: '5',
-                        name: 'Бефстроганов',
-                        author: 'Fjodor',
-                        time: 100,
-                        difficulty: 7,
-                        description:
-                            'Для бефстроганов из говядины со сметаной подойдет практически любой выруб мяса. Если хотите избежать процесса отбивания, то надо взять мясо получше и нарезать его потоньше.',
-                        image: 'https://via.placeholder.com/150/aba',
-                        rating: 9,
-                        commentaries: [
-                            {
-                                id: 2,
-                                authorId: 2,
-                                text: 'Отличный рецепт Бефстроганова!',
-                            },
-                            {
-                                id: 4,
-                                authorId: 4,
-                                text: 'Мне не понравился рецепт!',
-                            },
-                        ],
-                    },
-                    {
-                        id: '6',
-                        name: 'Бефстроганов',
-                        author: 'Fjodor',
-                        time: 100,
-                        difficulty: 7,
-                        description:
-                            'Для бефстроганов из говядины со сметаной подойдет практически любой выруб мяса. Если хотите избежать процесса отбивания, то надо взять мясо получше и нарезать его потоньше.',
-                        image: 'https://via.placeholder.com/150/aba',
-                        rating: 9,
-                        commentaries: [
-                            {
-                                id: 2,
-                                authorId: 2,
-                                text: 'Отличный рецепт Бефстроганова!',
-                            },
-                            {
-                                id: 4,
-                                authorId: 4,
-                                text: 'Мне не понравился рецепт!',
-                            },
-                        ],
-                    },]
+                    tempAddedRecipes = [
+                        {
+                            id: '4',
+                            name: 'Фрикасе',
+                            author: 'Елена',
+                            time: 30,
+                            difficulty: 4,
+                            description:
+                                'Вкусный сливочный соус с кусочками куриного филе. Ещё один рецепт, в котором куриное филе выступает в выигрышном варианте. Благодаря сливочному соусу, куриное филе получается очень нежным и ...',
+                            image: 'https://via.placeholder.com/150/abd',
+                            rating: 6,
+                            commentaries: [
+                                {
+                                    id: 8,
+                                    authorId: 4,
+                                    text: 'Мне не понравился рецепт',
+                                },
+                                {
+                                    id: 8,
+                                    authorId: 4,
+                                    text: 'Мне не понравился рецепт',
+                                },
+                            ],
+                        },
+                        {
+                            id: '5',
+                            name: 'Бефстроганов',
+                            author: 'Fjodor',
+                            time: 100,
+                            difficulty: 7,
+                            description:
+                                'Для бефстроганов из говядины со сметаной подойдет практически любой выруб мяса. Если хотите избежать процесса отбивания, то надо взять мясо получше и нарезать его потоньше.',
+                            image: 'https://via.placeholder.com/150/aba',
+                            rating: 9,
+                            commentaries: [
+                                {
+                                    id: 2,
+                                    authorId: 2,
+                                    text: 'Отличный рецепт Бефстроганова!',
+                                },
+                                {
+                                    id: 4,
+                                    authorId: 4,
+                                    text: 'Мне не понравился рецепт!',
+                                },
+                            ],
+                        },
+                        {
+                            id: '6',
+                            name: 'Бефстроганов',
+                            author: 'Fjodor',
+                            time: 100,
+                            difficulty: 7,
+                            description:
+                                'Для бефстроганов из говядины со сметаной подойдет практически любой выруб мяса. Если хотите избежать процесса отбивания, то надо взять мясо получше и нарезать его потоньше.',
+                            image: 'https://via.placeholder.com/150/aba',
+                            rating: 9,
+                            commentaries: [
+                                {
+                                    id: 2,
+                                    authorId: 2,
+                                    text: 'Отличный рецепт Бефстроганова!',
+                                },
+                                {
+                                    id: 4,
+                                    authorId: 4,
+                                    text: 'Мне не понравился рецепт!',
+                                },
+                            ],
+                        },
+                    ];
                     break;
                 }
                 case '6': {
@@ -239,22 +269,23 @@ export const recipesListReducer = (recipes = recipesList, action) => {
                                 },
                             ],
                         },
-                    ]
+                    ];
                     break;
                 }
                 default: {
-                    tempAddedRecipes=[];
+                    tempAddedRecipes = [];
                 }
             }
             if (tempAddedRecipes.length !== 0) {
                 return [
                     ...recipes,
-                    tempAddedRecipes[0], tempAddedRecipes[1], tempAddedRecipes[2] 
-                ]
+                    tempAddedRecipes[0],
+                    tempAddedRecipes[1],
+                    tempAddedRecipes[2],
+                ];
             } else {
                 return recipes;
             }
-            
         }
         default: {
             return recipes;

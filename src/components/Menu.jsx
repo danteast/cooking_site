@@ -35,25 +35,25 @@ const Menu = () => {
                     <Heading>Рейтинг авторов</Heading>
                 </LinkDiv>
             </NavLink>
-            <NavLink to='/profile' activeClassName={selected_link}>
+            <NavLink to='/profile/1' activeClassName={selected_link}>
                 <LinkDiv>
                     <RecipeIcon color='primary' />
-                    <Heading>Профиль</Heading>
+                    <Heading>Личный кабинет</Heading>
                 </LinkDiv>
             </NavLink>
-            <NavLink exact to='/AllArticles' activeClassName={selected_link}>
+            <NavLink exact to='/articles' activeClassName={selected_link}>
                 <LinkDiv>
                     <HomeIcon color='primary' />
                     <Heading>Все статьи</Heading>
                 </LinkDiv>
             </NavLink>
-            <NavLink exact to='/welcomePage' activeClassName={selected_link}>
+            {/* <NavLink exact to='/welcomePage' activeClassName={selected_link}>
                 <LinkDiv>
                     <HomeIcon color='primary' />
                     <Heading>Страница регистрации</Heading>
                 </LinkDiv>
-            </NavLink>
-            <NavLink exact to='/login' activeClassName={selected_link}>
+            </NavLink> */}
+            <NavLink exact to='/welcomePage' activeClassName={selected_link}>
                 <LinkDiv>
                     <HomeIcon color='primary' />
                     <Heading>Логин</Heading>

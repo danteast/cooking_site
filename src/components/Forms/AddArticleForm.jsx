@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useFormik } from 'formik';
-import { addArticle} from '../../actions/articlesActions';
+import { addArticle } from '../../actions/articlesActions';
 import { updateUserArticlesIds } from '../../actions/usersActions';
 import {
     add_article_form,
@@ -10,7 +10,7 @@ import {
     form_textarea,
 } from './AddArticleForm.module.css';
 
-const AddArticleFormik = ({ id, addArticle, updateUserRecipesIds }) => {
+const AddArticleFormik = ({ id, addArticle, updateUserArticlesIds }) => {
     const formik = useFormik({
         initialValues: {
             name: '',
