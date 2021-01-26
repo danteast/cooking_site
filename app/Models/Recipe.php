@@ -10,4 +10,6 @@ class Recipe extends Model
     use HasFactory;
 
     protected $table = 'recipes';
+    protected $primaryKey = "id";
+
 }

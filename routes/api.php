@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Route::get('/recipes', 'Api\RecipesController@index');
 Route::get('/recipes', [RecipesController::class, 'index'])->name('recipes');
+Route::get('/recipes/{id}', [RecipesController::class, 'recipe'])->where('id', '[0-9]+')->name('recipe');
