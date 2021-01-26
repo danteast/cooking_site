@@ -17392,7 +17392,7 @@ var Menu = function Menu() {
     className: _Menu_module_css__WEBPACK_IMPORTED_MODULE_3__.menu,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.NavLink, {
       exact: true,
-      to: "/public",
+      to: "/",
       activeClassName: _Menu_module_css__WEBPACK_IMPORTED_MODULE_3__.selected_link,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(LinkDiv, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_6__.default, {
@@ -18458,7 +18458,7 @@ var RootRouter = function RootRouter() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Switch, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
         exact: true,
-        path: "/public",
+        path: "/",
         render: function render() {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Main__WEBPACK_IMPORTED_MODULE_3__.default, {});
         }

@@ -17,7 +17,7 @@ const Heading = styled.p`
 const Menu = () => {
     return (
         <div className={menu}>
-            <NavLink exact to="/public" activeClassName={selected_link}>
+            <NavLink exact to="/" activeClassName={selected_link}>
                 <LinkDiv>
                     <HomeIcon color="primary" />
                     <Heading>Главная</Heading>

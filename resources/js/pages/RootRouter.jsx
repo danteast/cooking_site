@@ -16,7 +16,7 @@ const RootRouter = () => {
     return (
         <>
             <Switch>
-                <Route exact path="/public" render={() => <Main />} />
+                <Route exact path="/" render={() => <Main />} />
                 <Route exact path="/recipes" render={() => <Recipes />} />
                 <Route
                     path="/recipes/:id"
