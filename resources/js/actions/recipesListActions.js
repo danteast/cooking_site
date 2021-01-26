@@ -1,6 +1,8 @@
-export const ADD_RECIPE = 'ADD_RECIPE';
-export const ADD_COMMENTARY = 'ADD_COMMENTARY';
-export const RENDER_RECIPES = 'RENDER_RECIPES';
+export const ADD_RECIPE = "ADD_RECIPE";
+export const ADD_COMMENTARY = "ADD_COMMENTARY";
+export const RENDER_RECIPES = "RENDER_RECIPES";
+export const FETCH_RECIPES = "FETCH_RECIPES";
+export const FETCH_ERROR = "FETCH_ERROR";
 
 export const addRecipe = (recipe) => ({
     type: ADD_RECIPE,
@@ -19,3 +21,22 @@ export const addCommentary = (recipeId, text) => ({
         text,
     },
 });
+
+// export const fetchRecipes = () => {
+//     return (dispatch) => {
+//         return fetch("http://127.0.0.1:8000/api/recipes")
+//             .then((response) => response.json())
+//             .then((data) => {
+//                 console.log(data);
+//                 dispatch({ type: FETCH_RECIPES, payload: data.recipes });
+//             })
+//             .catch((err) => dispatch({ type: FETCH_ERROR }));
+//     };
+// };
+
+export const fetchRecipes = () => async (dispatch) => {
+    const response = await fetch("http://127.0.0.1:8000/api/recipes");
+    const data = await response.json();
+
+    dispatch({ type: FETCH_RECIPES, payload: data.recipes });
+};
