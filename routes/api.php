@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\RecipesController;
+use App\Http\Controllers\Api\IngredientsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Route::get('/recipes', 'Api\RecipesController@index');
 Route::get('/recipes', [RecipesController::class, 'index'])->name('recipes');
 Route::get('/recipes/{id}', [RecipesController::class, 'recipe'])->where('id', '[0-9]+')->name('recipe');
+
+
+Route::get('/ingredients', [IngredientsController::class, 'index'])->name('recipes');
+Route::get('/ingredients/{ingredients}', [IngredientsController::class, 'item'])->where('id', '[0-9]+')->name('ingredient');
