@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,4 +20,5 @@ class DatabaseSeeder extends Seeder
         ]);
         // \App\Models\User::factory(10)->create();
     }
+
 }
