@@ -16,11 +16,11 @@ class CreateIngredientsTable extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
-            $table->unsignedBigInteger('unit_id');
-            $table->float('product_fat',4,2);
-            $table->float('product_protein',4,2);
-            $table->float('product_carb',4,2);
-            $table->float('calorie',4,2);
+            $table->unsignedBigInteger('unit_id')->default(1);
+            $table->float('product_fat',5,2);
+            $table->float('product_protein',5,2);
+            $table->float('product_carb',5,2);
+            $table->float('calorie',5,2);
 
             $table->foreign('unit_id')->references('id')->on('units')->cascadeOnDelete();
         });

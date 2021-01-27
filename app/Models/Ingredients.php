@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ingredients extends Model
 {
-    use HasFactory;
-
-    protected $table = 'ingredients';
+    protected $fillable = ['name', 'product_fat', 'product_protein', 'product_carb', 'calorie'];
+    public $timestamps = false;
+    public $incrementing = true;
 }
