@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ingredients extends Model
 {
-    protected $fillable = ['name', 'product_fat', 'product_protein', 'product_carb', 'calorie'];
+    protected $table = 'ingredients';
     public $timestamps = false;
     public $incrementing = true;
 }
